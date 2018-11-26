@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TestLINQ
 {
@@ -19,6 +20,15 @@ namespace TestLINQ
                 }
             }
             return customer;
+        }
+
+        public Customer FindWithLinqQuery(List<Customer> customers, int customerId)
+        {
+            var query = from c in customers
+                        where c.CustomerId == customerId
+                        select c;
+
+            return query.First();
         }
 
         public List<Customer> Retrieve()
