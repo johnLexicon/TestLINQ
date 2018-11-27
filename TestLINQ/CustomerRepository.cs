@@ -31,6 +31,11 @@ namespace TestLINQ
             return query.First();
         }
 
+        public Customer FindWithMethodSyntax(List<Customer> customers, int customerId)
+        {
+            return customers.First<Customer>(c => c.CustomerId == customerId);
+        }
+
         public List<Customer> Retrieve()
         {
             var customerList = new List<Customer> {

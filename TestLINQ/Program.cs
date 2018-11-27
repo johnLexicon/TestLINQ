@@ -16,6 +16,9 @@ namespace TestLINQ
 
             Customer customer2 = repo.FindWithDeclarativeQuery(customers, 1);
             Console.WriteLine(customer2.FirstName);
+
+            Customer customer3 = repo.FindWithMethodSyntax(customers, 3);
+            Console.WriteLine(customer3.FirstName);
         }
     }
 }
