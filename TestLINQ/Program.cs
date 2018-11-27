@@ -14,11 +14,18 @@ namespace TestLINQ
             Customer customer = repo.Find(customers, 2);
             Console.WriteLine(customer.FirstName);
 
-            Customer customer2 = repo.FindWithDeclarativeQuery(customers, 1);
+            Customer customer2 = repo.FindWithQuerySyntax(customers, 1);
             Console.WriteLine(customer2.FirstName);
 
             Customer customer3 = repo.FindWithMethodSyntax(customers, 3);
-            Console.WriteLine(customer3.FirstName);
+            if(customer3 is null)
+            {
+                Console.WriteLine("No customer with that id");
+            }
+            else
+            {
+                Console.WriteLine(customer3.FirstName);
+            }
         }
     }
 }

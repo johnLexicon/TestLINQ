@@ -22,7 +22,7 @@ namespace TestLINQ
             return customer;
         }
 
-        public Customer FindWithDeclarativeQuery(List<Customer> customers, int customerId)
+        public Customer FindWithQuerySyntax(List<Customer> customers, int customerId)
         {
             var query = from c in customers
                         where c.CustomerId == customerId
@@ -33,7 +33,7 @@ namespace TestLINQ
 
         public Customer FindWithMethodSyntax(List<Customer> customers, int customerId)
         {
-            return customers.First<Customer>(c => c.CustomerId == customerId);
+            return customers.FirstOrDefault<Customer>(c => c.CustomerId == customerId);
         }
 
         public List<Customer> Retrieve()
