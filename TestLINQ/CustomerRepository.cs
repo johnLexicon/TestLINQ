@@ -22,7 +22,7 @@ namespace TestLINQ
             return customer;
         }
 
-        public Customer FindWithLinqQuery(List<Customer> customers, int customerId)
+        public Customer FindWithDeclarativeQuery(List<Customer> customers, int customerId)
         {
             var query = from c in customers
                         where c.CustomerId == customerId
