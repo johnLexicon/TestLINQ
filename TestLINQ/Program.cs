@@ -26,6 +26,8 @@ namespace TestLINQ
             {
                 Console.WriteLine(customer3.FirstName);
             }
+
+            Console.ReadKey();
         }
     }
 }
