@@ -11,6 +11,7 @@ namespace TestLINQ
             var repo = new CustomerRepository();
             List<Customer> customers = repo.Retrieve();
 
+            // Find customer
             Customer customer = repo.Find(customers, 2);
             Console.WriteLine(customer.FirstName);
 
